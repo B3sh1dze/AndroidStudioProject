@@ -22,7 +22,7 @@ fun main() {
             resultOfY += char
         }
     }
-asdasd
+
 
     println(resultOfX)                              // string of taken numbers from x
     println(resultOfY)                              // string of taken numbers from y
