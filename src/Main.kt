@@ -19,6 +19,8 @@ fun main() {
         }
         val numericValueOfX = numericPartOfX.toInt()
         val numericValueOfY = numericPartOfY.toInt()
+        println("X-ის მნიშვნელობაა: $numericValueOfX")
+        println("Y-ის მნიშვნელობაა: $numericValueOfY")
 
         if (numericValueOfY == 0) {
             println("ნულზე გაყოფა ნებადართული არაა.")
