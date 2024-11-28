@@ -4,10 +4,10 @@ fun main() {
 
     var userInput: Char = '0'
     while (userInput != 'N') {
-        println("Start")
-        print("Enter the meaning of X: ")
+        println("დაწყება")
+        print("შეიყვანეთ X ცვლადის მნიშვნელობა: ")
         var x: String? = readLine()
-        print("Enter the meaning of Y: ")
+        print("შეიყვანეთ Y ცვლადის მნიშვნელობა: ")
         var y: String? = readLine()
 
         var z: Double
@@ -19,38 +19,30 @@ fun main() {
                 resultOfX += char
             }
         }
-
         for (char in y!!) {
             if (char.isDigit()) {
                 resultOfY += char
             }
         }
 
-        if(!resultOfX.any { it.isDigit()}) {
+        if (!resultOfX.any { it.isDigit() }) {
             resultOfX = "0"
         }
-
-        if(!resultOfY.any { it.isDigit()}) {
+        if (!resultOfY.any { it.isDigit() }) {
             resultOfY = "0"
         }
 
         val finalNumOfX = resultOfX.toInt()
         val finalNumOfY = resultOfY.toInt()
+        z = (finalNumOfX.toDouble() / finalNumOfY.toDouble())
+        println("X და Y განაყოფი არის: $z")
 
-        if (finalNumOfY == 0) {
-            println("You can't divide by zero.")
-        } else {
-            z = (finalNumOfX.toDouble() / finalNumOfY.toDouble())
-            println("$finalNumOfX divided by $finalNumOfY is: $z")
-        }
-
-        print("Do you want to restart the program? <Y/N>")
-
-        var userChoice = readLine()
-        if (userChoice != null && userChoice.length == 1) {
-            userInput = userChoice.single().uppercaseChar()
+        print("გსურთ პროგრამის ხელახლა დაწყება <Y/N>?")
+        var answer = readLine()
+        if (answer != null && answer.length == 1) {
+            userInput = answer.single().uppercaseChar()
             if (userInput == 'N') {
-                println("The end")
+                println("დასასრული")
                 break
             }
         }
