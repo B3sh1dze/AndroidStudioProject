@@ -2,8 +2,8 @@ import java.lang.Double.parseDouble
 
 fun main() {
 
-    var userInput: Char = '0'
-    while (userInput != 'N') {
+    var continueProgram: Char = '0'
+    while (continueProgram != 'N') {
         println("დაწყება")
         print("შეიყვანეთ X ცვლადის მნიშვნელობა: ")
         var x: String? = readLine()
@@ -11,37 +11,36 @@ fun main() {
         var y: String? = readLine()
 
         var z: Double
-        var resultOfX: String = ""
-        var resultOfY: String = ""
+        var numericPartOfX: String = ""
+        var numericPartOfY: String = ""
 
         for (char in x!!) {
             if (char.isDigit()) {
-                resultOfX += char
+                numericPartOfX += char
             }
         }
         for (char in y!!) {
             if (char.isDigit()) {
-                resultOfY += char
+                numericPartOfY += char
             }
         }
-
-        if (!resultOfX.any { it.isDigit() }) {
-            resultOfX = "0"
+        if (!numericPartOfX.any { it.isDigit() }) {
+            numericPartOfX = "0"
         }
-        if (!resultOfY.any { it.isDigit() }) {
-            resultOfY = "0"
+        if (!numericPartOfY.any { it.isDigit() }) {
+            numericPartOfY = "0"
         }
 
-        val finalNumOfX = resultOfX.toInt()
-        val finalNumOfY = resultOfY.toInt()
-        z = (finalNumOfX.toDouble() / finalNumOfY.toDouble())
+        val numberX = numericPartOfX.toInt()
+        val numberY = numericPartOfY.toInt()
+        z = (numberX.toDouble() / numberY.toDouble())
         println("X და Y განაყოფი არის: $z")
 
         print("გსურთ პროგრამის ხელახლა დაწყება <Y/N>?")
         var answer = readLine()
         if (answer != null && answer.length == 1) {
-            userInput = answer.single().uppercaseChar()
-            if (userInput == 'N') {
+            continueProgram = answer.single().uppercaseChar()
+            if (continueProgram == 'N') {
                 println("დასასრული")
                 break
             }
