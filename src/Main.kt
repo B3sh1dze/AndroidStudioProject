@@ -54,7 +54,6 @@ fun getUserInput(prompt: String): String {
     } while (input.isNullOrBlank())
     return input
 }
-fun stringIsNullOrEmpty(string: String): Boolean = string.isNullOrBlank()
 fun findNumericPartOfString(string: String): String {
     var numericPartOfString: String = ""
     for (char in string!!) {
